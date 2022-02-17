@@ -1,6 +1,12 @@
+const express = require('express');
 const mongoose = require('mongoose');
+const app = express();
 
-mongoose.connect('mongodb:localhost:27017/files', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+mongoose.connect(
+    'mongodb+srv://maylson:moraes@cluster0.t8qjc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+    )
+.then(()=> {
+    console.log('Conectamos ao MongoDB!')
+    app.listen(3000)
+})
+.catch((err)=> console.log(err))

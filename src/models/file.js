@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const File = mongoose.model('File', {
+    file_id:{
+        type: mongoose.Types.ObjectId,
+        ref:'Category'
+    },
     Categoria: [],
     SubCategoria: [],
     TitulodoDocumento: String,
