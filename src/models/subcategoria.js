@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 
-const SubCategoria = mongoose.model('SubCategoria', {
+const SubCategory = mongoose.model('SubCategory', {
     file_id:{
         type: mongoose.Types.ObjectId,
-        ref:'Categoria'
+        ref:'Category'
     },
+    subcategoria: []
+
 })
 
-module.exports = SubCategoria;
+module.exports = SubCategory;

@@ -1,0 +1,14 @@
+[
+    {
+        "nomecategoria": "cat1"
+    },
+    {
+       "nomecategoria" : "cat2" 
+    },
+    {
+        "nomecategoria" : "cat3"
+    },
+    {
+        "nomecategoria" : "cat4"
+    }
+]

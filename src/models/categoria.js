@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Categoria = mongoose.model('Categoria', {
+const Category = mongoose.model('Category', {
     file_id:{
         type: mongoose.Types.ObjectId,
         ref:'File'
@@ -9,4 +9,4 @@ const Categoria = mongoose.model('Categoria', {
     SubCategoria: [],
 })
 
-module.exports = Categoria;
+module.exports = Category;
