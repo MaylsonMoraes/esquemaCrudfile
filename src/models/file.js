@@ -5,6 +5,15 @@ const File = mongoose.model('File', {
         type: mongoose.Types.ObjectId,
         ref:'Category'
     },
+    file_id:{
+        type: mongoose.Types.ObjectId,
+        ref:'SubCategory'
+    },
+    file_id:{
+        type: mongoose.Types.ObjectId,
+        ref:'Usuario'
+    },
+    usuario: [],
     Categoria: [],
     SubCategoria: [],
     TitulodoDocumento: String,
