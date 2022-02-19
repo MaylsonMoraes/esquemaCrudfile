@@ -3,6 +3,7 @@ const req = require('express/lib/request');
 const res = require('express/lib/response');
 const { append } = require('express/lib/response');
 const router = express.Router();
+const File = require('../models/file');
 
 //all register
 router.get('/', (req, res) => {
@@ -16,9 +17,14 @@ router.get('/:id', (req, res) => {
 });
 
 //create a register
-router.post('/', (req, res) => {
-    const body = req.body;
-    res.json(body);
+router.post('/', async (req, res) => {
+    try {
+        const file = req.body;
+        const response = await new File(file).save();
+        res.json({ error: false, file: response });
+    } catch (err) {
+        res.json({ error: true, message: err.message });    
+    }
 });
 
 //update one register with id
@@ -32,3 +38,5 @@ router.delete('/:id', (req, res) => {
     const id = req.params.id;
     res.json({ mensagem: 'Deletar somente registro com id: ${id}'});
 });
+
+module.exports = router;
